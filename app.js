@@ -35,5 +35,3 @@ module.exports = async function (fastify, opts) {
   })
 
 }
-// "mysql://testdbkiot:Kiot@321@db4free.net/testdbkiot"
-// "mysql://testdbkiot:Kiot%40321@db4free.net/testdbkiot"

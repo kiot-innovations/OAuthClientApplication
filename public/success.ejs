@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            height: 100vh;
+            position: relative;
+            background: black;
+        }
+
+        .vertical-center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            text-align: center;
+            width: 100%;
+        }
+
+        body {
+            margin: 0 !important;
+        }
+
+        p {
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        redirectToOAuthPage();
+        function redirectToOAuthPage() {
+            let client_id = "<%= locals.client_id %>";
+            let state = "<%= locals.state %>";
+            let redirect_uri = "<%= locals.redirect_uri %>";
+            window.location.replace("https://api.kiot.io/authstart?" + "client_id=" + client_id + "&state=" + state + "&redirect_uri=" + redirect_uri);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="vertical-center">
+            <p>Success</p>
+            <p>UserId: <%= locals.userId %></p>
+            <p>Access Token: <%= locals.accessToken %></p>
+            <p>Refresh Token: <%= locals.refreshToken %></p>
+            <p>Scope: <%= locals.scope %></p>
+            <p>Access Token Exipres At: <%= locals.accessTokenExpiresAt %></p>
+            <p>Refresh Token Exipres At: <%= locals.refreshTokenExpiresAt %></p>
+        </div>
+    </div>
+
+</body>
+
+</html>

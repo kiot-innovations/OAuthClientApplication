@@ -21,6 +21,11 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+
+    - name: npm/yarn/pnpm install
+      uses: Jaid/action-npm-install@v1.2.4
+      with:
+        packageManager: npm
     
     - name: Setup MySQL
       uses: mirromutth/mysql-action@v1.1

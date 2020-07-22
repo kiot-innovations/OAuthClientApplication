@@ -31,12 +31,9 @@ function build(t) {
 }
 
 function setEnvironment() {
-  process.env = {
-    DB_CONN_STRING: "mysql://testdbkiot:Kiot%40321@db4free.net/testdbkiot",
-    CLIENT_ID: "dummyclient",
-    REDIRECT_URI: "dummyurl",
-    STATE: "dummystate"
-  }
+  process.env.CLIENT_ID = "dummyclient";
+  process.env.REDIRECT_URI = "dummyurl";
+  process.env.STATE = "dummystate";
 }
 
 module.exports = {

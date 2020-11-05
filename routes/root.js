@@ -10,7 +10,8 @@ module.exports = async function (fastify, opts) {
       console.log(`${config.consts.OAUTH_START_URI}?client_id=${client_id}\&state=${state}\&redirect_uri=${redirect_uri}`)
     return reply.view('index.ejs',
       {
-        authStartUri: `${config.consts.OAUTH_START_URI}?client_id=${client_id}\&state=${state}\&redirect_uri=${redirect_uri}`
+        authStartUri: `${config.consts.OAUTH_START_URI}?client_id=${client_id}\&state=${state}\&redirect_uri=${redirect_uri}`,
+        authClientName: process.env.CLIENT_DISPLAY_NAME || "Third Party Client"
       });
   });
 }

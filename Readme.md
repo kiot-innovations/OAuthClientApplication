@@ -9,7 +9,7 @@ That's it. Users will now be able to login and generate token. Modify `routes/to
 
 
 #### Example Response from Token Service 
-```
+```JSON
 {
    "access_token": "Access Token String",
    "token_type": "Bearer",
@@ -21,6 +21,12 @@ That's it. Users will now be able to login and generate token. Modify `routes/to
    }
 }
 ```
+
+### Use of Refresh Tokens
+Also store refresh_token in your database, access_token have a relatively short life time, post expiry of the access_token use refresh_token to obtain access_token again. 
+[Getting Access Token using refresh_token](https://www.oauth.com/oauth2-servers/making-authenticated-requests/refreshing-an-access-token/)
+Use `https://api.kiot.io/oauth/token` as token url. 
+
 
 
 ### To Start Server

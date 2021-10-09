@@ -50,4 +50,4 @@ app.register(require('point-of-view'), {
 //   connectionString: process.env.DB_CONN_STRING
 // });
 
-app.listen(process.env.PORT || 3200);
+app.listen(process.env.PORT || 3200, '0.0.0.0');
